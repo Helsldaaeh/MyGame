@@ -79,16 +79,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj">
-      <Project>{90f29be6-5480-4ee1-b6e4-31838a5d1dbc}</Project>
-      <Name>ClassLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MyGame\MyGame.csproj">
-      <Project>{aea39ce9-4975-4932-8022-c8b0d136905e}</Project>
-      <Name>MyGame</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
