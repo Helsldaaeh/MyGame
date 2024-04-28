@@ -1,12 +1,356 @@
-﻿<Window x:Class="MyGame.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MyGame"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+﻿<Window
+    x:Class="MyGame.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MyGame"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="632"
+    mc:Ignorable="d">
+    <Grid x:Name="grid1" Background="#FF53608D">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="175" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <!--<Border BorderBrush="Black" BorderThickness="0,0,3,3">
+            <Rectangle Fill="Aqua" />
+        </Border>-->
+        <Border
+            Grid.Row="1"
+            BorderBrush="Black"
+            BorderThickness="0,3,3,0">
+            <Rectangle Fill="Aquamarine" />
+        </Border>
+        <Grid x:Name="LeftDownBlock">
+            <TextBlock x:Name="AnswerTextBox" />
+            <Button x:Name="AcceptButton" />
+            <Button x:Name="AlertButton" />
+        </Grid>
+
+        <Border
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            BorderBrush="Black"
+            BorderThickness="0,0,0,3">
+            <Rectangle Fill="SeaGreen" />
+        </Border>
+
+        <Border
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            BorderBrush="Black"
+            BorderThickness="0,0,0,0">
+            <Grid x:Name="QuestionGrid">
+                <StackPanel
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Orientation="vertical">
+                    <Grid x:Name="Y5">
+                        <StackPanel
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                        </StackPanel>
+                    </Grid>
+                    <Grid x:Name="Y4">
+                        <StackPanel
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                        </StackPanel>
+                    </Grid>
+                    <Grid x:Name="Y3">
+                        <StackPanel
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                        </StackPanel>
+                    </Grid>
+                    <Grid x:Name="Y2">
+                        <StackPanel
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                        </StackPanel>
+                    </Grid>
+                    <Grid x:Name="Y1">
+                        <StackPanel
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                            <Rectangle
+                                Width="100"
+                                Height="50"
+                                Margin="0,15,10,15"
+                                Fill="White" />
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid>
+            <Rectangle Fill="#FF53608D" />
+            <StackPanel
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Orientation="vertical">
+                <Rectangle
+                    Width="150"
+                    Height="50"
+                    Margin="0,15,20,15"
+                    Fill="White" />
+                <Rectangle
+                    Width="150"
+                    Height="50"
+                    Margin="0,15,20,15"
+                    Fill="White" />
+                <Rectangle
+                    Width="150"
+                    Height="50"
+                    Margin="0,15,20,15"
+                    Fill="White" />
+                <Rectangle
+                    Width="150"
+                    Height="50"
+                    Margin="0,15,20,15"
+                    Fill="White" />
+                <Rectangle
+                    Width="150"
+                    Height="50"
+                    Margin="0,15,20,15"
+                    Fill="White" />
+            </StackPanel>
+        </Grid>
+
+        <Border
+            Grid.Row="1"
+            Grid.Column="1"
+            BorderBrush="Black"
+            BorderThickness="3,3,0,0">
+            <Grid>
+                <Rectangle Fill="BurlyWood" />
+                <StackPanel
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Grid>
+                        <StackPanel
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="vertical">
+                            <Rectangle
+                                Width="85"
+                                Height="18"
+                                Margin="0,0,20,5"
+                                Fill="White" />
+                            <Rectangle
+                                Width="95"
+                                Height="95"
+                                Margin="0,5,20,5"
+                                Fill="White" />
+                            <Rectangle
+                                Width="85"
+                                Height="18"
+                                Margin="0,2.5,20,2.5"
+                                Fill="White" />
+                        </StackPanel>
+                    </Grid>
+                    <Grid>
+                        <StackPanel
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="vertical">
+                            <Rectangle
+                                Width="85"
+                                Height="18"
+                                Margin="0,0,20,5"
+                                Fill="White" />
+                            <Rectangle
+                                Width="95"
+                                Height="95"
+                                Margin="0,5,20,5"
+                                Fill="White" />
+                            <Rectangle
+                                Width="85"
+                                Height="18"
+                                Margin="0,2.5,20,2.5"
+                                Fill="White" />
+                        </StackPanel>
+                    </Grid>
+                    <Grid>
+                        <StackPanel
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="vertical">
+                            <Rectangle
+                                Width="85"
+                                Height="18"
+                                Margin="0,0,20,5"
+                                Fill="White" />
+                            <Rectangle
+                                Width="95"
+                                Height="95"
+                                Margin="0,5,20,5"
+                                Fill="White" />
+                            <Rectangle
+                                Width="85"
+                                Height="18"
+                                Margin="0,2.5,20,2.5"
+                                Fill="White" />
+                        </StackPanel>
+                    </Grid>
+                    <Grid>
+                        <StackPanel
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="vertical">
+                            <Rectangle
+                                Width="85"
+                                Height="18"
+                                Margin="0,0,20,5"
+                                Fill="White" />
+                            <Rectangle
+                                Width="95"
+                                Height="95"
+                                Margin="0,5,20,5"
+                                Fill="White" />
+                            <Rectangle
+                                Width="85"
+                                Height="18"
+                                Margin="0,2.5,20,2.5"
+                                Fill="White" />
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </Border>
     </Grid>
 </Window>
