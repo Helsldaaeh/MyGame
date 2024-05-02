@@ -13,6 +13,8 @@ namespace ClassLibrary
         void Delete(int id);
         void Update(Question question);
         void Create(Question question);
+        List<Question> ReadByPackId(int Id);
+        List<Question> ReadByThemeId(int Id);
     }
 
     public class QuestionRepositoryImpl : QuestionRepository
@@ -89,6 +91,73 @@ namespace ClassLibrary
             }
             return themeList;
         }
+
+        public List<Question> ReadByPackId(int Id)
+        {
+            List<Question> themeList = new List<Question>();
+            try
+            {
+                string sql = "SELECT * FROM question WHERE PackId = {Id}";
+                using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+                {
+                    connection.Open();
+                    using (SQLiteCommand cmd = new SQLiteCommand(sql, connection))
+                    {
+                        using (SQLiteDataReader rdr = cmd.ExecuteReader())
+                        {
+                            while (rdr.Read())
+                            {
+                                int index = 0;
+                                int id = rdr.GetInt32(index++);
+                                string name = rdr.GetString(index++);
+                                string question = rdr.GetString(index++);
+                                int answerid = rdr.GetInt32(index++);
+                                themeList.Add(new Question(id, name, question, answerid));
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                Console.WriteLine($"Ошибка доступа к базе данных. Исключение: {ex.Message}");
+            }
+            return themeList;
+        }
+
+        public List<Question> ReadByThemeId(int Id)
+        {
+            List<Question> themeList = new List<Question>();
+            try
+            {
+                string sql = "SELECT * FROM question WHERE ThemeId = {Id}";
+                using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+                {
+                    connection.Open();
+                    using (SQLiteCommand cmd = new SQLiteCommand(sql, connection))
+                    {
+                        using (SQLiteDataReader rdr = cmd.ExecuteReader())
+                        {
+                            while (rdr.Read())
+                            {
+                                int index = 0;
+                                int id = rdr.GetInt32(index++);
+                                string name = rdr.GetString(index++);
+                                string question = rdr.GetString(index++);
+                                int answerid = rdr.GetInt32(index++);
+                                themeList.Add(new Question(id, name, question, answerid));
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                Console.WriteLine($"Ошибка доступа к базе данных. Исключение: {ex.Message}");
+            }
+            return themeList;
+        }
+
 
         public void Update(Question question)
         {

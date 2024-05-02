@@ -47,7 +47,30 @@
             Grid.ColumnSpan="2"
             BorderBrush="Black"
             BorderThickness="0,0,0,0">
-            <Grid x:Name="QuestionGrid">
+
+            <ItemsControl ItemsSource="{Binding QuestionList}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="{Binding ThemeNumber}" Rows="{Binding QuestionNumber}" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Command="{Binding CellClickedCommand}">
+                            <Border BorderBrush="Black" BorderThickness="3">
+                                <TextBlock Text="{Binding Name}" />
+                            </Border>
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <ContentPresenter />
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <!--<Grid x:Name="QuestionGrid">
                 <StackPanel
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
@@ -213,7 +236,7 @@
                         </StackPanel>
                     </Grid>
                 </StackPanel>
-            </Grid>
+            </Grid>-->
         </Border>
 
         <Grid>
@@ -227,7 +250,7 @@
                     Height="50"
                     Margin="0,15,20,15"
                     Fill="White" />
-                <Rectangle
+                    <Rectangle
                     Width="150"
                     Height="50"
                     Margin="0,15,20,15"

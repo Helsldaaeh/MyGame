@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TicTacToeMP.Core.Client.Core
+namespace MyGame
 {
     public class ObservableObject : INotifyPropertyChanged
     {

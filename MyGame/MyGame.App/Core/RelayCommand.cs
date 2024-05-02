@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace TicTacToeMP.Core.Client.Core
+namespace MyGame
 {
     public class RelayCommand : ICommand
     {

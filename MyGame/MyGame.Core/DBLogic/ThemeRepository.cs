@@ -10,6 +10,7 @@ namespace ClassLibrary
     public interface ThemeRepository
     {
         List<Theme> Read();
+        List<Theme> ReadByPackId(int id);
         void Delete(int id);
         void Update(Theme theme);
         void Create(Theme theme);
@@ -86,6 +87,11 @@ namespace ClassLibrary
                 Console.WriteLine($"Ошибка доступа к базе данных. Исключение: {ex.Message}");
             }
             return themeList;
+        }
+
+        public List<Theme> ReadByPackId(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(Theme theme)
