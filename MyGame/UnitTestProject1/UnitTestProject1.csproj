@@ -71,13 +71,22 @@
     <Compile Include="DB Tests\Question_and_ThemeT.cs" />
     <Compile Include="DB Tests\QuestionT.cs" />
     <Compile Include="DB Tests\ThemeT.cs" />
-    <Compile Include="ClassTests\GameOptionsTest.cs" />
     <Compile Include="ClassTests\PLayerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyGame.App\MyGame.App.csproj">
+      <Project>{aea39ce9-4975-4932-8022-c8b0d136905e}</Project>
+      <Name>MyGame.App</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyGame.Core\Mygame.Core.csproj">
+      <Project>{90f29be6-5480-4ee1-b6e4-31838a5d1dbc}</Project>
+      <Name>Mygame.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

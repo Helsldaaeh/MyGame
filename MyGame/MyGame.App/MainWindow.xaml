@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:MyGame"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DataContext="{d:DesignInstance Type=local:ViewModel}"
     Title="MainWindow"
     Width="800"
     Height="632"
@@ -48,17 +48,18 @@
             BorderBrush="Black"
             BorderThickness="0,0,0,0">
 
+            <Grid>
             <ItemsControl ItemsSource="{Binding QuestionList}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <UniformGrid Columns="{Binding ThemeNumber}" Rows="{Binding QuestionNumber}" />
+                            <UniformGrid Columns="{Binding QuestionNumber}" Rows="{Binding  ThemeNumber}" />
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Button Command="{Binding CellClickedCommand}">
                             <Border BorderBrush="Black" BorderThickness="3">
-                                <TextBlock Text="{Binding Name}" />
+                                    <TextBlock Text="{Binding QuestionNumber}" />
                             </Border>
                             <Button.Template>
                                 <ControlTemplate TargetType="{x:Type Button}">
@@ -69,7 +70,9 @@
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
+                
 
+            </Grid>
             <!--<Grid x:Name="QuestionGrid">
                 <StackPanel
                     HorizontalAlignment="Center"

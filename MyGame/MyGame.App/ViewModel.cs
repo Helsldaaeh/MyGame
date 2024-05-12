@@ -11,7 +11,6 @@ namespace MyGame
     public class ViewModel : ObservableObject // Система, через которую мы будем управлять формами и вызывать их команды 
     {
         #region data
-        public GameOptions _gm;
         public List<Player> _players;
 
 
@@ -19,7 +18,7 @@ namespace MyGame
         private ThemeRepository themeRepository;
         private QuestionRepository questionRepository;
         private AnswerRepository answerRepository;
-
+        
         private ObservableCollection<Question> questionList;
         public ObservableCollection<Question> QuestionList { get => questionList; set { questionList = value; OnPropertyChanged("QuestionList"); } }
 
@@ -42,11 +41,13 @@ namespace MyGame
 
             packList = this.packRepository.Read();
 
-            List<Theme> tmpThemes = this.themeRepository.ReadByPackId(packList[0].Id);
-            themeNumber = tmpThemes.Count();
-            List<Question> tmp = this.questionRepository.ReadByPackId(packList[0].Id);
-            QuestionNumber = tmp.Where(x => x.Themeid == tmp[0].Themeid).Count();
-            QuestionList = new ObservableCollection<Question>();
+            List<Theme> themesList = this.themeRepository.ReadByPackId(1);
+            themeNumber = themesList.Count();
+            List<Question> questionList = this.questionRepository.ReadByPackId(1);
+            QuestionNumber = questionList.Where(x => x.Themeid == questionList[0].Themeid).Count();
+            QuestionList = new ObservableCollection<Question>(questionList);
+
+
         }
 
     }

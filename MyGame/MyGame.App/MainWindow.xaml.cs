@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,8 +21,16 @@ namespace MyGame
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        PackRepository packRepository = new PackRepositoryImpl();
+        ThemeRepository themeRepository = new ThemeRepositoryImpl();
+        QuestionRepository questionRepository = new QuestionRepositoryImpl();
+        AnswerRepository answerRepository = new AnswerRepositoryImpl();
+        ViewModel vm;
         public MainWindow()
         {
+            vm = new ViewModel(packRepository, themeRepository, questionRepository, answerRepository);
+            DataContext = vm;
             InitializeComponent();
         }
     }

@@ -70,7 +70,6 @@
     <Compile Include="DBLogic\Theme.cs" />
     <Compile Include="DBLogic\AnswerRepository.cs" />
     <Compile Include="DBLogic\ThemeRepository.cs" />
-    <Compile Include="GameOptions.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

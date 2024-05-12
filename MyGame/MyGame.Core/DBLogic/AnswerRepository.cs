@@ -18,7 +18,7 @@ namespace ClassLibrary
     public class AnswerRepositoryImpl : AnswerRepository
     {
         //Сделать ссылку на свою базу данных
-        private const string ConnectionString = "Data Source = C:\\Users\\13\\Desktop\\wadawd\\MyGame\\ClassLibrary\\DBLogic\\ProjectDB.db; FailIfMissing=False";
+        private const string ConnectionString = "Data Source = C:\\Users\\1\\Source\\Repos\\Helsldaaeh\\MyGame\\MyGame\\MyGame.Core\\DBLogic\\ProjectDB.db; FailIfMissing=False";
 
         public void Create(Answer answer)
         {

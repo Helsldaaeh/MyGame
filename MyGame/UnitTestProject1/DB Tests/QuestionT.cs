@@ -41,5 +41,11 @@ namespace UnitTestProject1
             Assert.AreNotEqual(0, questions.Last().Answerid);
             this.rep.Delete(next.Id);
         }
+        [TestMethod]
+        public void ThemeIdReadTest()
+        {
+            List<Question> questions = this.rep.ReadByThemeId(1);
+            Assert.AreEqual("Имя человека, который крестил Русь", questions.Last().Name);
+        }
     }
 }

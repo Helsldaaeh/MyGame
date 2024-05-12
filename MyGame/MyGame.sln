@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.9.34723.18
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34601.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{F98A5809-AF9D-45D7-B17E-E1C21E765FB7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGame.Integration", "MyGame.Integration\MyGame.Integration.csproj", "{C1EB453D-134E-4751-B587-2CDC1C1507A1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGame.App", "MyGame.App\MyGame.App.csproj", "{AEA39CE9-4975-4932-8022-C8B0D136905E}"
 EndProject
@@ -21,10 +19,6 @@ Global
 		{F98A5809-AF9D-45D7-B17E-E1C21E765FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F98A5809-AF9D-45D7-B17E-E1C21E765FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F98A5809-AF9D-45D7-B17E-E1C21E765FB7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C1EB453D-134E-4751-B587-2CDC1C1507A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1EB453D-134E-4751-B587-2CDC1C1507A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1EB453D-134E-4751-B587-2CDC1C1507A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1EB453D-134E-4751-B587-2CDC1C1507A1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AEA39CE9-4975-4932-8022-C8B0D136905E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AEA39CE9-4975-4932-8022-C8B0D136905E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEA39CE9-4975-4932-8022-C8B0D136905E}.Release|Any CPU.ActiveCfg = Release|Any CPU

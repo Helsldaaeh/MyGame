@@ -12,7 +12,7 @@ namespace ClassLibrary
         #region Private
         private string _nickName;       // Ник игрока
         private int _count_of_points;   // Количество очков, закреплённых за игроком
-        private int _number_of_player;  // Номер игрока, пока не очень понимаю как правильно его реализовать 
+        private int _number_of_player;  // Номер игрока, пока не очень понимаю как правильно его реализовать
         #endregion
         #region Get/Set
         public string NickName { get => _nickName; set => _nickName = value; }

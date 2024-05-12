@@ -20,13 +20,13 @@ namespace ClassLibrary
     public class QuestionRepositoryImpl : QuestionRepository
     {
         //Сделать ссылку на свою базу данных
-        private const string ConnectionString = "Data Source = C:\\Users\\13\\Desktop\\wadawd\\MyGame\\ClassLibrary\\DBLogic\\ProjectDB.db; FailIfMissing=False";
+        private const string ConnectionString = "Data Source = C:\\Users\\1\\Source\\Repos\\Helsldaaeh\\MyGame\\MyGame\\MyGame.Core\\DBLogic\\ProjectDB.db; FailIfMissing=False";
 
         public void Create(Question question)
         {
             try
             {
-                string sql = $"INSERT INTO question VALUES(NULL, \"{question.Name}\", \"{question.tQuestion}\", {question.Answerid})";
+                string sql = $"INSERT INTO question VALUES(NULL, \"{question.Name}\", {question.Answerid}, {question.Packid},{question.Themeid})";
                 using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
                 {
                     connection.Open();
@@ -77,9 +77,10 @@ namespace ClassLibrary
                                 int index = 0;
                                 int id = rdr.GetInt32(index++);
                                 string name = rdr.GetString(index++);
-                                string question = rdr.GetString(index++);
                                 int answerid = rdr.GetInt32(index++);
-                                themeList.Add(new Question(id, name, question, answerid));
+                                int packid = rdr.GetInt32(index++);
+                                int themeid = rdr.GetInt32(index++);
+                                themeList.Add(new Question(id, name, answerid, packid, themeid));
                             }
                         }
                     }
@@ -97,7 +98,7 @@ namespace ClassLibrary
             List<Question> themeList = new List<Question>();
             try
             {
-                string sql = "SELECT * FROM question WHERE PackId = {Id}";
+                string sql = $"SELECT * FROM question WHERE PackId = {Id}";
                 using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
                 {
                     connection.Open();
@@ -110,9 +111,10 @@ namespace ClassLibrary
                                 int index = 0;
                                 int id = rdr.GetInt32(index++);
                                 string name = rdr.GetString(index++);
-                                string question = rdr.GetString(index++);
                                 int answerid = rdr.GetInt32(index++);
-                                themeList.Add(new Question(id, name, question, answerid));
+                                int packid = rdr.GetInt32(index++);
+                                int themeid = rdr.GetInt32(index++);
+                                themeList.Add(new Question(id, name, answerid, packid,themeid));
                             }
                         }
                     }
@@ -130,7 +132,7 @@ namespace ClassLibrary
             List<Question> themeList = new List<Question>();
             try
             {
-                string sql = "SELECT * FROM question WHERE ThemeId = {Id}";
+                string sql = $"SELECT * FROM question WHERE ThemeId = {Id}";
                 using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
                 {
                     connection.Open();
@@ -143,9 +145,10 @@ namespace ClassLibrary
                                 int index = 0;
                                 int id = rdr.GetInt32(index++);
                                 string name = rdr.GetString(index++);
-                                string question = rdr.GetString(index++);
                                 int answerid = rdr.GetInt32(index++);
-                                themeList.Add(new Question(id, name, question, answerid));
+                                int packid = rdr.GetInt32(index++);
+                                int themeid = rdr.GetInt32(index++);
+                                themeList.Add(new Question(id, name, answerid, packid, themeid));
                             }
                         }
                     }
@@ -163,7 +166,7 @@ namespace ClassLibrary
         {
             try
             {
-                string sql = $"UPDATE question SET Name = \"{question.Name}\", Question = \"{question.tQuestion}\", Answerid = {question.Answerid} WHERE ID = {question.Id}";
+                string sql = $"UPDATE question SET Name = \"{question.Name}\", Answerid = {question.Answerid} WHERE ID = {question.Id}";
                 using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
                 {
                     connection.Open();

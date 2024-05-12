@@ -19,7 +19,7 @@ namespace ClassLibrary
     public class ThemeRepositoryImpl : ThemeRepository
     {
         //Сделать ссылку на свою базу данных
-        private const string ConnectionString = "Data Source = C:\\Users\\13\\Desktop\\wadawd\\MyGame\\ClassLibrary\\DBLogic\\ProjectDB.db; FailIfMissing=False";
+        private const string ConnectionString = "Data Source = C:\\Users\\1\\Source\\Repos\\Helsldaaeh\\MyGame\\MyGame\\MyGame.Core\\DBLogic\\ProjectDB.db; FailIfMissing=False";
 
         public void Create(Theme theme)
         {
@@ -89,9 +89,35 @@ namespace ClassLibrary
             return themeList;
         }
 
-        public List<Theme> ReadByPackId(int id)
+        public List<Theme> ReadByPackId(int packId)
         {
-            throw new NotImplementedException();
+            List<Theme> themeList = new List<Theme>();
+            try
+            {
+                string sql = $"SELECT * FROM themes WHERE packId = {packId}";
+                using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+                {
+                    connection.Open();
+                    using (SQLiteCommand cmd = new SQLiteCommand(sql, connection))
+                    {
+                        using (SQLiteDataReader rdr = cmd.ExecuteReader())
+                        {
+                            while (rdr.Read())
+                            {
+                                int index = 0;
+                                int id = rdr.GetInt32(index++);
+                                string name = rdr.GetString(index++);
+                                themeList.Add(new Theme(id, name));
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                Console.WriteLine($"Ошибка доступа к базе данных. Исключение: {ex.Message}");
+            }
+            return themeList;
         }
 
         public void Update(Theme theme)
